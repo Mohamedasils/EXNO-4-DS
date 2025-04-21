@@ -1,4 +1,4 @@
-# EXNO:4-DS
+EXNO:4-DS
 # AIM:
 To read the given data and perform Feature Scaling and Feature Selection process and save the
 data to a file.
@@ -39,17 +39,22 @@ import numpy as np
 df=pd.read_csv(r"D:\ds\EXNO-4-DS\bmi.csv")
 df
 ```
-![alt text](image.png)  
+![image](https://github.com/user-attachments/assets/d91c5503-1b13-4ced-a173-51963d844943)
+
+
 
 ```python
 df.head()
 ```
-![alt text](image-1.png)  
+![image-1](https://github.com/user-attachments/assets/bdaf3c22-b0fd-469b-b59d-7d8c2bfdc3f9)
+
 
 ```python
 df.dropna()
 ```
-![alt text](image-2.png)  
+![image-2](https://github.com/user-attachments/assets/ca1dbebd-798e-4271-9ac9-a4f0efa14f8f)
+
+
 
 ```python
 # TYPE CODE TO FIND MAXIMUM VALUE FROM HEIGHT AND WEIGHT FEATURE
@@ -58,7 +63,9 @@ maxWeight = np.max(df["Weight"])
 print(maxHeight)
 print(maxWeight)
 ```
-![alt text](image-3.png)
+![image-3](https://github.com/user-attachments/assets/992bbc91-d89f-48ac-84df-b22f1995fbbf)
+
+
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
@@ -68,7 +75,9 @@ scaler = MinMaxScaler()
 dfmms[['Height', 'Weight']]=scaler.fit_transform(df[["Height", "Weight"]])
 dfmms
 ```
-![alt text](image-4.png)  
+![image-4](https://github.com/user-attachments/assets/8c45a825-f172-48df-94ab-21e1b2f33929)
+
+
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -78,7 +87,9 @@ scaler=StandardScaler()
 dfsc[["Weight", "Height"]]=scaler.fit_transform(dfsc[["Weight", "Height"]])
 dfsc
 ```
-![alt text](image-5.png)  
+![image-5](https://github.com/user-attachments/assets/70e83d18-156f-4cc6-950e-d7bae9e63b43)
+
+
 
 ```python
 from sklearn.preprocessing import Normalizer
@@ -88,7 +99,9 @@ dfn=df.copy()
 dfn[["Weight", "Height"]]=scaler.fit_transform(dfn[["Weight", "Height"]])
 dfn
 ```
-![alt text](image-6.png)  
+![image-6](https://github.com/user-attachments/assets/c3a8d40b-0016-4a1b-a572-2fce34c3fcc9)
+
+
 
 ```python
 from sklearn.preprocessing import MaxAbsScaler
@@ -98,7 +111,9 @@ dfmas=df.copy()
 dfmas[["Weight", "Height"]]=scaler.fit_transform(dfmas[["Weight", "Height"]])
 dfmas
 ```
-![alt text](image-7.png)  
+![image-7](https://github.com/user-attachments/assets/d74307e1-be12-4de5-b4eb-dbe7665623bc)
+
+
 
 ```python
 from sklearn.preprocessing import RobustScaler
@@ -108,7 +123,9 @@ dfrs=df.copy()
 dfrs[["Weight", "Height"]]=scaler.fit_transform(dfrs[["Weight", "Height"]])
 dfrs
 ```
-![alt text](image-8.png)  
+
+![image-8](https://github.com/user-attachments/assets/cbefa4fe-cd87-48e2-a040-ba3e33a0aea5)
+
 
 ```python
 import pandas as pd
@@ -132,12 +149,15 @@ from sklearn.preprocessing import LabelEncoder
 df=pd.read_csv(r"D:\ds\EXNO-4-DS\titanic_dataset.csv")
 df.columns
 ```
-![alt text](image-9.png)  
+![image-9](https://github.com/user-attachments/assets/b46a4b9b-f653-49ba-8682-d07cd2a75554)
+
 
 ```python
 df.shape
 ```
-![alt text](image-10.png)  
+![image-10](https://github.com/user-attachments/assets/5486f9c4-1483-4b93-81b8-5fb799588dad)
+
+
 
 ```python
 X = df.drop("Survived", axis=1)       # feature matrix
@@ -149,25 +169,30 @@ df1=df.drop(["Name", "Sex", "Ticket", "Cabin","Embarked"], axis=1)
 ```python
 df1.columns
 ```
-![alt text](image-11.png)  
+![image-11](https://github.com/user-attachments/assets/47e8c8b9-c3c6-437c-9570-7184cf74ef20)
+
+
 
 ```python
 df1['Age'].isnull().sum()
 ```
-![alt text](image-12.png)  
+![image-12](https://github.com/user-attachments/assets/66c8379e-c945-45fe-a5a5-53702d9a83ce)
+
+
 
 ```python
 #fill null values of age column using forward fill method
 df1["Age"] = df1["Age"].ffill()
 df1['Age'].isnull().sum()
 ```
-![alt text](image-13.png)  
+
 
 ```python
 feature=SelectKBest(mutual_info_classif,k=3)
 df1.columns
 ```
-![alt text](image-14.png)  
+![image-14](https://github.com/user-attachments/assets/3f90d3e1-a313-40db-9ce3-1c7a7f7a6879)
+
 
 ```python
 #Replace the columns from  ['PassengerId', 'Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare'] to ['PassengerId', 'Fare', 'Pclass', 'Age', 'SibSp', 'Parch', 'Survived']
@@ -176,20 +201,27 @@ new_cols=['PassengerId', 'Fare', 'Pclass', 'Age', 'SibSp', 'Parch', 'Survived']
 df1=df1[new_cols]
 df1
 ```
-![alt text](image-15.png)  
+![image-15](https://github.com/user-attachments/assets/93d47956-3903-4dee-8dd7-6069299849c9)
+
+
 
 ```python
 X=df1.iloc[:,0:6]
 y=df1.iloc[:,6]
 X.columns
 ```
-![alt text](image-16.png)  
+![image-16](https://github.com/user-attachments/assets/fbca849f-9fd0-4094-9324-ac5f04dee511)
+
+
+
 
 ```python
 y=y.to_frame()
 y.columns
 ```
-![alt text](image-17.png)  
+![image-17](https://github.com/user-attachments/assets/700ec340-b334-4ccf-9344-c9b9521558fa)
+
+
 
 ```python
 X = df1.drop("Survived", axis=1)       # feature matrix
@@ -198,8 +230,10 @@ y = df1['Survived']
 
 ```python
 feature.fit(X,y)
-```
-![alt text](image-18.png)  
+``` 
+![image-18](https://github.com/user-attachments/assets/be147b92-ac8e-4512-b0f1-3dff330b85d2)
+
+
 
 ```python
 #perform feature selections techniques
@@ -222,7 +256,9 @@ chi_scores = pd.DataFrame({
 
 print(chi_scores)
 ```
-![alt text](image-19.png)  
+![image-19](https://github.com/user-attachments/assets/09bbefa6-320c-4296-8a50-14c1b4500d5b)
+
+
 
 # RESULT:
        Thus the program to read the given data and perform Feature Scaling and Feature Selection process and save the data to a file is been executed.
