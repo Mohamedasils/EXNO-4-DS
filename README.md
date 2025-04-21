@@ -5,13 +5,9 @@ data to a file.
 
 # ALGORITHM:
 STEP 1:Read the given Data.
-
 STEP 2:Clean the Data Set using Data Cleaning Process.
-
 STEP 3:Apply Feature Scaling for the feature in the data set.
-
 STEP 4:Apply Feature Selection for the feature in the data set.
-
 STEP 5:Save the data to the file.
 
 # FEATURE SCALING:
@@ -24,33 +20,92 @@ STEP 5:Save the data to the file.
 Feature selection is to find the best set of features that allows one to build useful models. Selecting the best features helps the model to perform well.
 The feature selection techniques used are:
 1.Filter Method
-
 2.Wrapper Method
-
 3.Embedded Method
 
 # CODING AND OUTPUT:
-# NAME:MOHAMED ASIL S
-# REG NO:212223040112
-![image](https://github.com/user-attachments/assets/59aa11b3-474c-4fe4-b628-08b150858eed)
-![image](https://github.com/user-attachments/assets/682ae884-ccaa-4b12-89e5-ad86d93ab5af)
-![image](https://github.com/user-attachments/assets/00f10d0f-9f70-477c-a897-59a6bdc9ee25)
-![image](https://github.com/user-attachments/assets/1b093ed3-bc44-4bd7-9b37-4c2dae4f8454)
-![image](https://github.com/user-attachments/assets/e4236dd4-cea1-45ae-90c9-c7641d7017a1)
-![image](https://github.com/user-attachments/assets/579c171d-0712-4207-af53-76a9e76eab52)
-![image](https://github.com/user-attachments/assets/404949f9-d364-4a12-9960-1869cea7d44e)
-![image](https://github.com/user-attachments/assets/d40b5399-089c-4f7c-9a70-bc4c18bcd600)
-![image](https://github.com/user-attachments/assets/44b1cf64-8f02-415f-bdae-6759d0fccb22)
-![image](https://github.com/user-attachments/assets/c1b0468e-6174-41c6-bcd9-f7f0e98f1742)
-![image](https://github.com/user-attachments/assets/80843b38-7309-4665-8880-0f5d3e462330)
-![image](https://github.com/user-attachments/assets/3921cecd-03fc-4fce-984b-9d458d12de1c)
-![image](https://github.com/user-attachments/assets/1cd9fdee-8a07-455c-9d7a-83b35ea55f26)
-![image](https://github.com/user-attachments/assets/3aa20af8-e19a-44bb-a742-b86253b20461)
-![image](https://github.com/user-attachments/assets/81c9935a-ce16-4691-9961-0cc395053031)
-![image](https://github.com/user-attachments/assets/b6b4b6f8-dadc-4dd8-887b-3179a96e97fa)
-![image](https://github.com/user-attachments/assets/650c5ada-6f7e-4734-89a2-4b6f6dd0f83b)
-![image](https://github.com/user-attachments/assets/58314c91-ad24-48c6-bc12-3f596d7463f1)
+```
+NAME : MOHAMED ASIL S
+REGISTER NUMBER : 212223040112
+```
 
+```
+import pandas as pd
+import numpy as np
+```
+```
+df=pd.read_csv('/content/bmi.csv')
+df
+```
+IMG
+```
+df.head()
+```
+IMG
+```
+df.dropna()
+```
+```
+max_vals=np.max(np.abs(df[['Height','Weight']]))
+max_vals
+```
+199
+```
+from sklearn.preprocessing import MinMaxScaler
+scaler=MinMaxScaler()
+df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+IMG
+```
+df1=pd.read_csv('/content/bmi.csv')
+df2=pd.read_csv('/content/bmi.csv')
+df3=pd.read_csv('/content/bmi.csv')
+df4=pd.read_csv('/content/bmi.csv')
+df5=pd.read_csv('/content/bmi.csv')
+df5
+```
+IMG
+```
+from sklearn.preprocessing import StandardScaler
+sc=StandardScaler()
+df1[['Height','Weight']]=sc.fit_transform(df1[['Height','Weight']])
+df.head(10)
+```
+IMG
+```
+from sklearn.preprocessing import Normalizer
+scaler=Normalizer()
+df2[['Height','Weight']]=scaler.fit_transform(df2[['Height','Weight']])
+df2
+```
+IMG
+```
+from sklearn.preprocessing import MaxAbsScaler
+max1=MaxAbsScaler()
+df3[['Height','weight']]=max1.fit_transform(df3[['Height','Weight']])
+df3
+```
+IMG
+```
+from sklearn.preprocessing import RobustScaler
+roub=RobustScaler()
+df4[['Height','Weight']]=roub.fit_transform(df4[['Height','Weight']])
+df4
+```
+IMG
+```
+from sklearn.feature_selection import SelectKBest,f_regression,mutual_info_classif
+from sklearn.feature_selection import chi2
+data=pd.read_csv('/content/income.csv')
+data
+```
+IMG
+```
+data1=pd.read_csv('/content/titanic_dataset (1).csv')
+data1
+```
+IMG
 
 # RESULT:
-  Thus, Feature selection and Feature scaling has been used on thegiven dataset.
+       # INCLUDE YOUR RESULT HERE
