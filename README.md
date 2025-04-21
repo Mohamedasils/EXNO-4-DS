@@ -3,9 +3,6 @@
 To read the given data and perform Feature Scaling and Feature Selection process and save the
 data to a file.
 
-# NAME:MOHAMED ASIL S
-# REG NO:212223040112
-
 # ALGORITHM:
 STEP 1:Read the given Data.
 
@@ -33,6 +30,8 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
+# NAME:MOHAMED ASIL S
+# REG NO:212223040112
 ![image](https://github.com/user-attachments/assets/59aa11b3-474c-4fe4-b628-08b150858eed)
 ![image](https://github.com/user-attachments/assets/682ae884-ccaa-4b12-89e5-ad86d93ab5af)
 ![image](https://github.com/user-attachments/assets/00f10d0f-9f70-477c-a897-59a6bdc9ee25)
